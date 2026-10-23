@@ -1,0 +1,215 @@
+{
+  "dataset": "cicids2017_flow",
+  "row_count": 2827677,
+  "col_count": 84,
+  "duplicate_records_by_5tuple_timestamp": 287378,
+  "label_distribution": {
+    "BENIGN": {
+      "count": 2271122,
+      "percent": 80.3176
+    },
+    "DoS Hulk": {
+      "count": 230123,
+      "percent": 8.1382
+    },
+    "PortScan": {
+      "count": 158804,
+      "percent": 5.6161
+    },
+    "DDoS": {
+      "count": 128025,
+      "percent": 4.5276
+    },
+    "DoS GoldenEye": {
+      "count": 10293,
+      "percent": 0.364
+    },
+    "FTP-Patator": {
+      "count": 7935,
+      "percent": 0.2806
+    },
+    "SSH-Patator": {
+      "count": 5897,
+      "percent": 0.2085
+    },
+    "DoS slowloris": {
+      "count": 5796,
+      "percent": 0.205
+    },
+    "DoS Slowhttptest": {
+      "count": 5499,
+      "percent": 0.1945
+    },
+    "Bot": {
+      "count": 1956,
+      "percent": 0.0692
+    },
+    "Web Attack \u2013 Brute Force": {
+      "count": 1507,
+      "percent": 0.0533
+    },
+    "Web Attack \u2013 XSS": {
+      "count": 652,
+      "percent": 0.0231
+    },
+    "Infiltration": {
+      "count": 36,
+      "percent": 0.0013
+    },
+    "Web Attack \u2013 Sql Injection": {
+      "count": 21,
+      "percent": 0.0007
+    },
+    "Heartbleed": {
+      "count": 11,
+      "percent": 0.0004
+    }
+  },
+  "per_day_distribution": {
+    "5/7/2017": {
+      "BENIGN": 439668,
+      "DoS slowloris": 5796,
+      "DoS GoldenEye": 10293,
+      "DoS Slowhttptest": 5499,
+      "DoS Hulk": 230123,
+      "Heartbleed": 11
+    },
+    "6/7/2017": {
+      "Web Attack \u2013 Brute Force": 1507,
+      "Web Attack \u2013 XSS": 652,
+      "Web Attack \u2013 Sql Injection": 21,
+      "BENIGN": 456267,
+      "Infiltration": 36
+    },
+    "7/7/2017": {
+      "BENIGN": 413928,
+      "PortScan": 158804,
+      "DDoS": 128025,
+      "Bot": 1956
+    },
+    "4/7/2017": {
+      "FTP-Patator": 7935,
+      "BENIGN": 431809,
+      "SSH-Patator": 5897
+    },
+    "Monday": {
+      "BENIGN": 529450
+    }
+  },
+  "inf_nan_stats": {
+    "Flow Bytes/s": {
+      "null_count": 0,
+      "nan_count": 0,
+      "infinity_count": 0
+    },
+    "Flow Packets/s": {
+      "null_count": 0,
+      "nan_count": 0,
+      "infinity_count": 0
+    },
+    "Flow Duration": {
+      "null_count": 0,
+      "nan_count": 0,
+      "infinity_count": 0
+    },
+    "Total Fwd Packets": {
+      "null_count": 0,
+      "nan_count": 0,
+      "infinity_count": 0
+    },
+    "Total Backward Packets": {
+      "null_count": 0,
+      "nan_count": 0,
+      "infinity_count": 0
+    }
+  },
+  "numeric_stats": {
+    "Flow Duration": {
+      "mean": 14801695.76,
+      "stddev": 33668460.37,
+      "min": -13.0,
+      "max": 119999998.0
+    },
+    "Total Fwd Packets": {
+      "mean": 9.37,
+      "stddev": 750.08,
+      "min": 1.0,
+      "max": 219759.0
+    },
+    "Total Backward Packets": {
+      "mean": 10.4,
+      "stddev": 997.93,
+      "min": 0,
+      "max": 291922.0
+    },
+    "Total Length of Fwd Packets": {
+      "mean": 549.89,
+      "stddev": 9998.99,
+      "min": 0,
+      "max": 12900000.0
+    },
+    "Total Length of Bwd Packets": {
+      "mean": 16180.17,
+      "stddev": 2264314.57,
+      "min": 0,
+      "max": 655453030.0
+    }
+  },
+  "top_destination_ports": [
+    {
+      "port": 53,
+      "count": 957971
+    },
+    {
+      "port": 80,
+      "count": 617823
+    },
+    {
+      "port": 443,
+      "count": 505327
+    },
+    {
+      "port": 123,
+      "count": 23880
+    },
+    {
+      "port": 22,
+      "count": 16921
+    },
+    {
+      "port": 21,
+      "count": 13502
+    },
+    {
+      "port": 137,
+      "count": 7913
+    },
+    {
+      "port": 389,
+      "count": 6379
+    },
+    {
+      "port": 88,
+      "count": 5579
+    },
+    {
+      "port": 465,
+      "count": 3817
+    }
+  ],
+  "top_protocols": [
+    {
+      "protocol": "tcp",
+      "count": 1826505
+    },
+    {
+      "protocol": "udp",
+      "count": 999476
+    },
+    {
+      "protocol": "other",
+      "count": 1696
+    }
+  ],
+  "elapsed_seconds": 34.45
+}

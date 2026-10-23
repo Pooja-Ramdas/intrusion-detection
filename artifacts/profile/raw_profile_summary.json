@@ -1,0 +1,10 @@
+{
+  "cicids2017_flow_rows": 2827677,
+  "cicids2017_packet_rows": 177693,
+  "unswnb15_rows": 257673,
+  "total_raw_rows": 3263043,
+  "flow_duplicates": 287378,
+  "flow_infinity_bytes_sec": 0,
+  "flow_infinity_packets_sec": 0,
+  "total_profiling_wallclock_seconds": 40.79
+}

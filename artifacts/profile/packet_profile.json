@@ -1,0 +1,39 @@
+{
+  "dataset": "cicids2017_packet",
+  "row_count": 177693,
+  "col_count": 1509,
+  "metadata_columns": [
+    "packet_id",
+    "flow_id",
+    "source_ip",
+    "source_port",
+    "destination_ip",
+    "destination_port",
+    "protocol",
+    "payload_length",
+    "attack_label"
+  ],
+  "null_counts": {
+    "packet_id": 0,
+    "flow_id": 0,
+    "source_ip": 0,
+    "source_port": 0,
+    "destination_ip": 0,
+    "destination_port": 0,
+    "protocol": 0,
+    "payload_length": 0,
+    "attack_label": 0
+  },
+  "label_distribution": {
+    "BENIGN": {
+      "count": 103967,
+      "percent": 58.5093
+    },
+    "DDoS": {
+      "count": 73726,
+      "percent": 41.4907
+    }
+  },
+  "payload_bytes_columns": 1500,
+  "elapsed_seconds": 3.47
+}

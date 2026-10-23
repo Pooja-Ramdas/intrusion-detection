@@ -1,0 +1,18 @@
+{
+  "rows_in": 2827677,
+  "duplicates_removed": 594,
+  "rows_with_infinities_fixed": 0,
+  "nulls_handled": "All numeric nulls imputed with 0.0 / categorical with Unknown",
+  "rows_out": 2827083,
+  "retention_rate_percent": 99.98,
+  "features_engineered_or_added": [
+    "label_multi",
+    "is_attack",
+    "label_binary",
+    "day_of_week",
+    "split_stratified",
+    "split_temporal"
+  ],
+  "packet_rows_cleaned": 177693,
+  "unsw_rows_cleaned": 257673
+}

@@ -1,0 +1,69 @@
+{
+  "total_joined_instances": 49104,
+  "matching_labels": 24413,
+  "mismatched_labels": 24691,
+  "mismatch_rate_percent": 50.2831,
+  "distribution_matrix": [
+    {
+      "flow_label": "DoS_Slowhttptest",
+      "packet_label": "DDoS",
+      "count": 2732
+    },
+    {
+      "flow_label": "DoS_Hulk",
+      "packet_label": "DDoS",
+      "count": 2134
+    },
+    {
+      "flow_label": "DoS_Slowloris",
+      "packet_label": "BENIGN",
+      "count": 901
+    },
+    {
+      "flow_label": "DDoS",
+      "packet_label": "DDoS",
+      "count": 10784
+    },
+    {
+      "flow_label": "DoS_Hulk",
+      "packet_label": "BENIGN",
+      "count": 707
+    },
+    {
+      "flow_label": "PortScan",
+      "packet_label": "DDoS",
+      "count": 31
+    },
+    {
+      "flow_label": "DoS_Slowloris",
+      "packet_label": "DDoS",
+      "count": 1531
+    },
+    {
+      "flow_label": "DoS_Slowhttptest",
+      "packet_label": "BENIGN",
+      "count": 917
+    },
+    {
+      "flow_label": "PortScan",
+      "packet_label": "BENIGN",
+      "count": 19
+    },
+    {
+      "flow_label": "BENIGN",
+      "packet_label": "DDoS",
+      "count": 10479
+    },
+    {
+      "flow_label": "BENIGN",
+      "packet_label": "BENIGN",
+      "count": 13629
+    },
+    {
+      "flow_label": "DDoS",
+      "packet_label": "BENIGN",
+      "count": 5240
+    }
+  ],
+  "note": "Quantified cross-layer label discrepancy as observed in raw CIC-IDS2017 packet capture vs generated flow labels."
+}

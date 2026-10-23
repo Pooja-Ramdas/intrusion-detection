@@ -1,0 +1,22 @@
+{
+  "dataset": "unswnb15",
+  "row_count": 257673,
+  "col_count": 36,
+  "label_distribution": {
+    "1": 164673,
+    "0": 93000
+  },
+  "attack_cat_distribution": {
+    "Normal": 93000,
+    "Generic": 58871,
+    "Exploits": 44525,
+    "Fuzzers": 24246,
+    "DoS": 16353,
+    "Reconnaissance": 13987,
+    "Analysis": 2677,
+    "Backdoor": 2329,
+    "Shellcode": 1511,
+    "Worms": 174
+  },
+  "elapsed_seconds": 1.1
+}
