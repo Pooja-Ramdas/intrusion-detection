@@ -1,0 +1,101 @@
+{
+  "total_rows": 2827083,
+  "total_columns": 86,
+  "feature_counts_by_group": {
+    "flow": 46,
+    "packet": 11,
+    "payload": 20,
+    "metadata_flag": 1,
+    "total_model_features": 78
+  },
+  "flow_linkage": {
+    "total_flows": 2827083,
+    "linked_flows": 34548,
+    "unlinked_flows": 2792535,
+    "link_rate_percent": 1.222,
+    "imputation_rule": "Zero-fill (0.0) for numeric packet and payload attributes on unlinked flows"
+  },
+  "zero_variance_drops": [
+    "bwd_psh_flags",
+    "bwd_urg_flags",
+    "fwd_avg_bytes_bulk",
+    "fwd_avg_packets_bulk",
+    "fwd_avg_bulk_rate",
+    "bwd_avg_bytes_bulk",
+    "bwd_avg_packets_bulk",
+    "bwd_avg_bulk_rate"
+  ],
+  "high_correlation_drops": [
+    "subflow_bwd_packets",
+    "subflow_fwd_bytes",
+    "syn_flag_count",
+    "avg_fwd_segment_size",
+    "fwd_iat_total",
+    "cwe_flag_count",
+    "average_packet_size",
+    "fwd_packets_s",
+    "subflow_fwd_packets",
+    "bwd_packet_length_mean",
+    "bwd_header_length",
+    "avg_bwd_segment_size",
+    "subflow_bwd_bytes",
+    "total_backward_packets",
+    "fwd_packet_length_std",
+    "idle_max",
+    "fwd_iat_max",
+    "total_length_of_bwd_packets",
+    "packet_length_std",
+    "idle_min",
+    "bwd_packet_length_std",
+    "ece_flag_count",
+    "idle_mean",
+    "fwd_header_length"
+  ],
+  "sample_feature_summary": {
+    "count": {
+      "flow_duration": "2827083",
+      "flow_bytes_s": "2827083",
+      "destination_port": "2827083",
+      "pkt_count": "2827083",
+      "pkt_len_mean": "2827083",
+      "payload_entropy": "2827083",
+      "payload_hist_bin_2": "2827083"
+    },
+    "mean": {
+      "flow_duration": "1.4804805751060722E7",
+      "flow_bytes_s": "1484651.8264257864",
+      "destination_port": "8055.252507973767",
+      "pkt_count": "0.06285383202403325",
+      "pkt_len_mean": "30.093277965761377",
+      "payload_entropy": "0.05617976585995628",
+      "payload_hist_bin_2": "0.0030271484797076745"
+    },
+    "stddev": {
+      "flow_duration": "3.367131353003006E7",
+      "flow_bytes_s": "2.5833017498164073E7",
+      "destination_port": "18268.662677157747",
+      "pkt_count": "2.446814767664038",
+      "pkt_len_mean": "400.51113730626554",
+      "payload_entropy": "0.5193356379806471",
+      "payload_hist_bin_2": "0.028912475045342546"
+    },
+    "min": {
+      "flow_duration": "0",
+      "flow_bytes_s": "-2.61E8",
+      "destination_port": "0.0",
+      "pkt_count": "0.0",
+      "pkt_len_mean": "0.0",
+      "payload_entropy": "0.0",
+      "payload_hist_bin_2": "0.0"
+    },
+    "max": {
+      "flow_duration": "119999998",
+      "flow_bytes_s": "2.071E9",
+      "destination_port": "65535.0",
+      "pkt_count": "1773.0",
+      "pkt_len_mean": "11595.0",
+      "payload_entropy": "7.997388471355124",
+      "payload_hist_bin_2": "0.3984375"
+    }
+  }
+}

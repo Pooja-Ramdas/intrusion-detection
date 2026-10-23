@@ -1,0 +1,40 @@
+{
+  "flow_columns_count": 90,
+  "packet_columns_count": 1509,
+  "total_flows": 2827083,
+  "total_packets": 177693,
+  "distinct_flow_ids_in_flows": 2827083,
+  "distinct_flow_ids_in_packets": 34548,
+  "flows_with_linked_packets": 34548,
+  "flows_without_linked_packets": 2792535,
+  "flow_link_rate_percent": 1.222,
+  "packets_with_linked_flows": 177693,
+  "packets_without_linked_flows": 0,
+  "packet_link_rate_percent": 100.0,
+  "flow_id_columns": [
+    "flow_id",
+    "source_ip",
+    "source_port",
+    "destination_ip",
+    "destination_port",
+    "protocol",
+    "timestamp",
+    "label_raw",
+    "label_multi",
+    "label_binary",
+    "day_of_week",
+    "split_temporal",
+    "split_stratified"
+  ],
+  "packet_id_columns": [
+    "packet_id",
+    "flow_id",
+    "source_ip",
+    "source_port",
+    "destination_ip",
+    "destination_port",
+    "protocol",
+    "attack_label"
+  ],
+  "payload_columns_count": 1501
+}

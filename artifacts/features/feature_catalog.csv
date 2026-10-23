@@ -1,0 +1,79 @@
+feature_name,group,description
+destination_port,flow,Target transport layer service port (structural endpoint feature)
+protocol_num,flow,"Transport protocol encoded (6=TCP, 17=UDP, 0=Other)"
+flow_duration,flow,Flow-level metric: flow_duration
+total_fwd_packets,flow,Flow-level metric: total_fwd_packets
+total_length_of_fwd_packets,flow,Flow-level metric: total_length_of_fwd_packets
+fwd_packet_length_max,flow,Flow-level metric: fwd_packet_length_max
+fwd_packet_length_min,flow,Flow-level metric: fwd_packet_length_min
+fwd_packet_length_mean,flow,Flow-level metric: fwd_packet_length_mean
+bwd_packet_length_max,flow,Flow-level metric: bwd_packet_length_max
+bwd_packet_length_min,flow,Flow-level metric: bwd_packet_length_min
+flow_bytes_s,flow,Flow-level metric: flow_bytes_s
+flow_packets_s,flow,Flow-level metric: flow_packets_s
+flow_iat_mean,flow,Flow-level metric: flow_iat_mean
+flow_iat_std,flow,Flow-level metric: flow_iat_std
+flow_iat_max,flow,Flow-level metric: flow_iat_max
+flow_iat_min,flow,Flow-level metric: flow_iat_min
+fwd_iat_mean,flow,Flow-level metric: fwd_iat_mean
+fwd_iat_std,flow,Flow-level metric: fwd_iat_std
+fwd_iat_min,flow,Flow-level metric: fwd_iat_min
+bwd_iat_total,flow,Flow-level metric: bwd_iat_total
+bwd_iat_mean,flow,Flow-level metric: bwd_iat_mean
+bwd_iat_std,flow,Flow-level metric: bwd_iat_std
+bwd_iat_max,flow,Flow-level metric: bwd_iat_max
+bwd_iat_min,flow,Flow-level metric: bwd_iat_min
+fwd_psh_flags,flow,Flow-level metric: fwd_psh_flags
+fwd_urg_flags,flow,Flow-level metric: fwd_urg_flags
+bwd_packets_s,flow,Flow-level metric: bwd_packets_s
+min_packet_length,flow,Flow-level metric: min_packet_length
+max_packet_length,flow,Flow-level metric: max_packet_length
+packet_length_mean,flow,Flow-level metric: packet_length_mean
+packet_length_variance,flow,Flow-level metric: packet_length_variance
+fin_flag_count,flow,Flow-level metric: fin_flag_count
+rst_flag_count,flow,Flow-level metric: rst_flag_count
+psh_flag_count,flow,Flow-level metric: psh_flag_count
+ack_flag_count,flow,Flow-level metric: ack_flag_count
+urg_flag_count,flow,Flow-level metric: urg_flag_count
+down_up_ratio,flow,Flow-level metric: down_up_ratio
+init_win_bytes_forward,flow,Flow-level metric: init_win_bytes_forward
+init_win_bytes_backward,flow,Flow-level metric: init_win_bytes_backward
+act_data_pkt_fwd,flow,Flow-level metric: act_data_pkt_fwd
+min_seg_size_forward,flow,Flow-level metric: min_seg_size_forward
+active_mean,flow,Flow-level metric: active_mean
+active_std,flow,Flow-level metric: active_std
+active_max,flow,Flow-level metric: active_max
+active_min,flow,Flow-level metric: active_min
+idle_std,flow,Flow-level metric: idle_std
+pkt_count,packet,Total packet count per flow from packet capture
+pkt_len_total,packet,Total payload bytes summed across linked packets
+pkt_len_mean,packet,Average payload length across linked packets
+pkt_len_std,packet,Standard deviation of payload length across linked packets
+pkt_len_min,packet,Minimum payload length in linked packets
+pkt_len_max,packet,Maximum payload length in linked packets
+pkt_payload_fraction,packet,Fraction of packets possessing non-zero payload (>0 bytes)
+pkt_fwd_ratio,packet,Ratio of forward directional packets to total packets
+pkt_iat_mean,packet,Mean packet inter-arrival time (0.0: timestamps absent in packet release)
+pkt_iat_std,packet,Stddev packet inter-arrival time (0.0: timestamps absent in packet release)
+pkt_iat_max,packet,Max packet inter-arrival time (0.0: timestamps absent in packet release)
+payload_bytes_total,payload,Total payload bytes across all packets in the flow
+payload_bytes_mean,payload,Mean payload bytes per packet in the flow
+payload_bytes_max,payload,Maximum payload bytes in any packet of the flow
+payload_entropy,payload,"Shannon entropy (bits, base-2) of payload bytes across packets"
+payload_hist_bin_0,payload,Normalized byte histogram frequency bucket 0 (bytes [0..15])
+payload_hist_bin_1,payload,Normalized byte histogram frequency bucket 1 (bytes [16..31])
+payload_hist_bin_2,payload,Normalized byte histogram frequency bucket 2 (bytes [32..47])
+payload_hist_bin_3,payload,Normalized byte histogram frequency bucket 3 (bytes [48..63])
+payload_hist_bin_4,payload,Normalized byte histogram frequency bucket 4 (bytes [64..79])
+payload_hist_bin_5,payload,Normalized byte histogram frequency bucket 5 (bytes [80..95])
+payload_hist_bin_6,payload,Normalized byte histogram frequency bucket 6 (bytes [96..111])
+payload_hist_bin_7,payload,Normalized byte histogram frequency bucket 7 (bytes [112..127])
+payload_hist_bin_8,payload,Normalized byte histogram frequency bucket 8 (bytes [128..143])
+payload_hist_bin_9,payload,Normalized byte histogram frequency bucket 9 (bytes [144..159])
+payload_hist_bin_10,payload,Normalized byte histogram frequency bucket 10 (bytes [160..175])
+payload_hist_bin_11,payload,Normalized byte histogram frequency bucket 11 (bytes [176..191])
+payload_hist_bin_12,payload,Normalized byte histogram frequency bucket 12 (bytes [192..207])
+payload_hist_bin_13,payload,Normalized byte histogram frequency bucket 13 (bytes [208..223])
+payload_hist_bin_14,payload,Normalized byte histogram frequency bucket 14 (bytes [224..239])
+payload_hist_bin_15,payload,Normalized byte histogram frequency bucket 15 (bytes [240..255])
+has_packet_features,metadata_flag,"Binary indicator: 1 if flow has linked packet capture records, 0 otherwise"

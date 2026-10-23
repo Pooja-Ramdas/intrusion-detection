@@ -1,0 +1,9 @@
+{
+  "read_seconds": 5.96,
+  "flow_features_seconds": 0.4,
+  "packet_aggregates_seconds": 0.93,
+  "payload_features_seconds": 1.51,
+  "join_seconds": 0.31,
+  "write_seconds": 50.75,
+  "total_phase3_seconds": 78.23
+}
