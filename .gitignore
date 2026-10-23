@@ -1,0 +1,10 @@
+data/staging/
+.env
+*.vhdx
+__pycache__/
+.ipynb_checkpoints/
+artifacts/*.json
+artifacts/*.csv
+artifacts/*.png
+*.pyc
+.DS_Store

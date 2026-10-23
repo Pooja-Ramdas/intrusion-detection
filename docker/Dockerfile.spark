@@ -1,0 +1,32 @@
+# bda-spark: single image used for spark-master, spark-workers, jobs, and Streamlit app.
+# Base: official Apache Spark 3.5.3 with Python 3.
+FROM apache/spark:3.5.3-python3
+
+USER root
+
+# System deps needed by some Python libs
+RUN apt-get update -qq && apt-get install -y --no-install-recommends \
+    curl \
+    && rm -rf /var/lib/apt/lists/* \
+    && ln -s /usr/bin/python3 /usr/bin/python 2>/dev/null || true
+
+# Python dependencies
+COPY docker/requirements.txt /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
+
+# Try nids-datasets; not fatal if unavailable on PyPI
+RUN pip install --no-cache-dir nids-datasets 2>/dev/null || \
+    echo "nids-datasets not on PyPI — will use huggingface_hub directly"
+
+# Spark defaults: point at HDFS namenode and standalone master
+COPY docker/spark-defaults.conf /opt/spark/conf/spark-defaults.conf
+
+# Application source
+COPY src/ /opt/spark/work-dir/src/
+COPY app/ /app/
+
+# HF cache inside container (overridden to host-mounted volume at runtime for ingest jobs)
+ENV HF_HOME=/tmp/hf_cache
+ENV PYTHONUNBUFFERED=1
+
+USER spark
