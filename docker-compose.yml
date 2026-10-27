@@ -14,7 +14,7 @@ services:
       CORE_CONF_fs_defaultFS: hdfs://namenode:9000
       CORE_CONF_hadoop_http_staticuser_user: root
       HDFS_CONF_dfs_replication: 2
-      HDFS_CONF_dfs_blocksize: 16777216          # 16 MB blocks
+      HDFS_CONF_dfs_blocksize: 134217728         # 128 MiB blocks
       HDFS_CONF_dfs_namenode_datanode_registration_ip___hostname___check: "false"
     volumes:
       - namenode_data:/hadoop/dfs/name
@@ -24,6 +24,8 @@ services:
       timeout: 10s
       retries: 5
       start_period: 40s
+    mem_limit: 640m
+    cpus: 0.50
 
   datanode1:
     image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
@@ -36,7 +38,9 @@ services:
     environment:
       CORE_CONF_fs_defaultFS: hdfs://namenode:9000
       HDFS_CONF_dfs_replication: 2
-      HDFS_CONF_dfs_blocksize: 16777216
+      HDFS_CONF_dfs_blocksize: 134217728
+      HDFS_CONF_dfs_datanode_du_reserved: 5368709120
+      HDFS_CONF_dfs_datanode_data_dir: file:///hadoop/dfs/data
     volumes:
       - datanode1_data:/hadoop/dfs/data
     healthcheck:
@@ -45,6 +49,8 @@ services:
       timeout: 10s
       retries: 5
       start_period: 40s
+    mem_limit: 768m
+    cpus: 0.50
 
   datanode2:
     image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
@@ -57,7 +63,9 @@ services:
     environment:
       CORE_CONF_fs_defaultFS: hdfs://namenode:9000
       HDFS_CONF_dfs_replication: 2
-      HDFS_CONF_dfs_blocksize: 16777216
+      HDFS_CONF_dfs_blocksize: 134217728
+      HDFS_CONF_dfs_datanode_du_reserved: 5368709120
+      HDFS_CONF_dfs_datanode_data_dir: file:///hadoop/dfs/data
     volumes:
       - datanode2_data:/hadoop/dfs/data
     healthcheck:
@@ -66,6 +74,8 @@ services:
       timeout: 10s
       retries: 5
       start_period: 40s
+    mem_limit: 768m
+    cpus: 0.50
 
   # ── Spark Standalone ──────────────────────────────────────────────────────
   spark-master:
@@ -85,6 +95,7 @@ services:
       SPARK_MASTER_HOST: spark-master
       SPARK_MASTER_PORT: 7077
       SPARK_MASTER_WEBUI_PORT: 8080
+      SPARK_LOCAL_DIRS: /spark-tmp
     command: >
       /bin/bash -c "
         /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master
@@ -96,6 +107,8 @@ services:
       timeout: 10s
       retries: 5
       start_period: 30s
+    mem_limit: 512m
+    cpus: 0.25
 
   spark-worker-1:
     image: bda-spark:latest
@@ -107,9 +120,18 @@ services:
         condition: service_healthy
     environment:
       SPARK_NO_DAEMONIZE: "true"
-      SPARK_WORKER_MEMORY: ${SPARK_WORKER_MEMORY:-1500m}
-      SPARK_WORKER_CORES: ${SPARK_WORKER_CORES:-2}
-    command: ["/opt/spark/bin/spark-class", "org.apache.spark.deploy.worker.Worker", "--memory", "1500m", "--cores", "2", "spark://spark-master:7077"]
+      SPARK_WORKER_MEMORY: ${SPARK_WORKER_MEMORY:-700m}
+      SPARK_WORKER_CORES: ${SPARK_WORKER_CORES:-1}
+      SPARK_LOCAL_DIRS: /spark-tmp
+    command: ["/opt/spark/bin/spark-class", "org.apache.spark.deploy.worker.Worker", "--memory", "${SPARK_WORKER_MEMORY:-700m}", "--cores", "${SPARK_WORKER_CORES:-1}", "spark://spark-master:7077"]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8081"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    mem_limit: 896m
+    cpus: 1.00
 
   spark-worker-2:
     image: bda-spark:latest
@@ -121,9 +143,18 @@ services:
         condition: service_healthy
     environment:
       SPARK_NO_DAEMONIZE: "true"
-      SPARK_WORKER_MEMORY: ${SPARK_WORKER_MEMORY:-1500m}
-      SPARK_WORKER_CORES: ${SPARK_WORKER_CORES:-2}
-    command: ["/opt/spark/bin/spark-class", "org.apache.spark.deploy.worker.Worker", "--memory", "1500m", "--cores", "2", "spark://spark-master:7077"]
+      SPARK_WORKER_MEMORY: ${SPARK_WORKER_MEMORY:-700m}
+      SPARK_WORKER_CORES: ${SPARK_WORKER_CORES:-1}
+      SPARK_LOCAL_DIRS: /spark-tmp
+    command: ["/opt/spark/bin/spark-class", "org.apache.spark.deploy.worker.Worker", "--memory", "${SPARK_WORKER_MEMORY:-700m}", "--cores", "${SPARK_WORKER_CORES:-1}", "spark://spark-master:7077"]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8081"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    mem_limit: 896m
+    cpus: 1.00
 
 
   # ── MongoDB ───────────────────────────────────────────────────────────────
@@ -136,12 +167,15 @@ services:
       - "27017:27017"
     volumes:
       - mongo_data:/data/db
+    command: ["mongod", "--wiredTigerCacheSizeGB", "2"]
     healthcheck:
       test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')", "--quiet"]
       interval: 30s
       timeout: 10s
       retries: 5
       start_period: 20s
+    mem_limit: 2560m
+    cpus: 1.25
 
   # ── Streamlit Dashboard ───────────────────────────────────────────────────
   app:
@@ -158,14 +192,33 @@ services:
         condition: service_healthy
     volumes:
       - ./artifacts:/artifacts:ro
+      - ./app:/app:ro
+      - ${BDA_ROOT:-D:/bda}/logs/profile/phase2_v1/csv:/profile:ro
+      - ${BDA_ROOT:-D:/bda}/_meta/results:/results:ro
+      - ${BDA_ROOT:-D:/bda}/_meta/profile/EDA:/graphs:ro
+    environment:
+      MONGO_URI: mongodb://mongodb:27017
+      BDA_PROFILE_DIR: /profile
     command: >
       streamlit run /app/app.py
       --server.port 8501
       --server.address 0.0.0.0
       --server.headless true
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    mem_limit: 640m
+    cpus: 0.50
 
 volumes:
   namenode_data:
+    name: bda_namenode_data
   datanode1_data:
+    name: bda_datanode1_data
   datanode2_data:
+    name: bda_datanode2_data
   mongo_data:
+    name: bda_mongo_data
