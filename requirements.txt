@@ -1,0 +1,5 @@
+# Dependencies required by the hosted Streamlit dashboard.
+streamlit>=1.32,<2
+pandas>=1.5
+plotly>=5.18,<6
+pymongo>=4.6,<5
