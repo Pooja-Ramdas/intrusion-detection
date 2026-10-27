@@ -29,6 +29,11 @@ def table(name):
     p=profile/(name+".csv")
     try: return pd.read_csv(p) if p.exists() else pd.DataFrame()
     except Exception: return pd.DataFrame()
+def json_artifact(*parts):
+    try:
+        with artifacts.joinpath(*parts).open(encoding="utf-8") as f: return json.load(f)
+    except (OSError,ValueError):
+        return {}
 def chart(df,x,y,title,kind="bar"):
     if df.empty or x not in df or y not in df:
         st.info("No verified table available for this chart.")
@@ -66,14 +71,35 @@ if page=="Overview":
     st.info("Evaluation metrics use the saved seeded held-out sample; see Detection Results for scores, confusion matrices, and ROC/PR curves.")
     st.write("**Data scope:** CIC-IDS2017 packet working slice and ingested flow files; UNSW-NB15 remains external validation. See phase reports for incomplete processing scope.")
 elif page=="Data Profiling":
-    st.subheader("Measured bounded EDA")
-    df=table("rows_by_dataset_day_label")
-    st.dataframe(df,use_container_width=True)
-    chart(df,"label_multi","rows","Rows by observed label")
-    q=table("column_quality")
-    st.dataframe(q,use_container_width=True)
-    chart(q,"column_name","null_rate","Missing-value rate")
-    st.caption("Values are from the bounded EDA recorded in Phase 2; do not generalize to full dataset balance.")
+    st.subheader("Dataset profiles")
+    flow=json_artifact("profile","flow_profile.json")
+    packet=json_artifact("profile","packet_profile.json")
+    unsw=json_artifact("profile","unsw_profile.json")
+    features=json_artifact("features","feature_stats.json")
+    d1,d2,d3=st.columns(3)
+    d1.metric("CIC-IDS2017 flow rows",f"{flow.get('row_count',0):,}",f"{flow.get('col_count',0)} columns")
+    d2.metric("CIC-IDS2017 packet rows",f"{packet.get('row_count',0):,}",f"{packet.get('col_count',0)} columns")
+    d3.metric("UNSW-NB15 rows",f"{unsw.get('row_count',0):,}",f"{unsw.get('col_count',0)} columns")
+
+    st.markdown("#### CIC-IDS2017 flow labels")
+    labels=flow.get("label_distribution",{})
+    if labels:
+        label_df=pd.DataFrame([{"Label":k,"Rows":v["count"],"Share (%)":v["percent"]} for k,v in labels.items()])
+        st.plotly_chart(px.bar(label_df,x="Rows",y="Label",orientation="h",title="Observed flow records by attack label",template="plotly_dark").update_layout(yaxis={"categoryorder":"total ascending"}),use_container_width=True)
+        st.dataframe(label_df.sort_values("Rows",ascending=False),use_container_width=True,hide_index=True)
+
+    a,b=st.columns(2)
+    packet_labels=packet.get("label_distribution",{})
+    if packet_labels:
+        packet_df=pd.DataFrame([{"Label":k,"Rows":v["count"],"Share (%)":v["percent"]} for k,v in packet_labels.items()])
+        a.markdown("#### Packet label split")
+        a.plotly_chart(px.pie(packet_df,names="Label",values="Rows",title="CIC-IDS2017 packet labels",template="plotly_dark"),use_container_width=True)
+    feature_groups=features.get("feature_counts_by_group",{})
+    if feature_groups:
+        group_df=pd.DataFrame([{"Feature group":k,"Features":v} for k,v in feature_groups.items() if k!="total_model_features"])
+        b.markdown("#### Model feature composition")
+        b.plotly_chart(px.bar(group_df,x="Feature group",y="Features",title=f"{features.get('total_columns',0)} total columns · {feature_groups.get('total_model_features',0)} model features",template="plotly_dark"),use_container_width=True)
+    st.caption("Profile counts are from the repository’s saved Spark profiling artifacts; CIC-IDS2017 packet data is a bounded working slice.")
 elif page=="Detection Results":
     st.subheader("Held-out model evaluation")
     result=evaluation()
@@ -109,9 +135,24 @@ elif page=="Detection Results":
                 pass
         st.caption("Evaluation uses a reduced seeded sample. Multiclass AUC is one-vs-rest; see docs/phase_4_report.md for scope details.")
 elif page=="Traffic Analysis":
-    st.subheader("Protocol and packet profile")
-    d=table("protocol_distribution")
-    chart(d,"protocol","rows","Observed protocols")
-    d=table("packet_size_distribution")
-    chart(d,"packet_size_bin","rows","Packet size distribution")
-    st.info("Payload entropy and top-talker tables are not available in verified Task 3 outputs.")
+    st.subheader("Traffic composition")
+    flow=json_artifact("profile","flow_profile.json")
+    protocols=flow.get("top_protocols",[])
+    ports=flow.get("top_destination_ports",[])
+    a,b=st.columns(2)
+    if protocols:
+        protocol_df=pd.DataFrame(protocols).rename(columns={"protocol":"Protocol","count":"Flows"})
+        a.metric("Observed flow records",f"{flow.get('row_count',0):,}")
+        a.plotly_chart(px.pie(protocol_df,names="Protocol",values="Flows",title="Flow share by transport protocol",template="plotly_dark"),use_container_width=True)
+        a.dataframe(protocol_df,use_container_width=True,hide_index=True)
+    if ports:
+        ports_df=pd.DataFrame(ports).rename(columns={"port":"Destination port","count":"Flows"})
+        b.markdown("#### Most common destination ports")
+        b.plotly_chart(px.bar(ports_df,x="Destination port",y="Flows",title="Top 10 destination ports",template="plotly_dark"),use_container_width=True)
+        b.dataframe(ports_df,use_container_width=True,hide_index=True)
+    stats=flow.get("numeric_stats",{})
+    if stats:
+        st.markdown("#### Flow numeric profile")
+        stats_df=pd.DataFrame.from_dict(stats,orient="index").rename_axis("Feature").reset_index()
+        st.dataframe(stats_df,use_container_width=True,hide_index=True)
+    st.caption("Traffic charts summarize the saved CIC-IDS2017 flow profile artifact.")
