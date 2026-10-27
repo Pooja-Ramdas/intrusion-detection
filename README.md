@@ -4,6 +4,8 @@ A containerized big data project for profiling network traffic and exploring flo
 
 ## Public dashboard
 
-The Streamlit entry point is `app/app.py`; its hosted Python dependencies are listed in the repository-root `requirements.txt`. To publish it, sign in to [Streamlit Community Cloud](https://share.streamlit.io/) with GitHub, create an app using repository `Pooja-Ramdas/intrusion-detection`, branch `master`, and file path `app/app.py`, then choose a public app URL. After deployment, Community Cloud provides a shareable `https://<app-name>.streamlit.app` URL.
+**Live app:** [BDA | Network Defense](https://intrusion-detection-aeaz7cbuxzpp8vsjza9id6.streamlit.app/)
 
-The dashboard can render without Docker. MongoDB investigation requires a reachable MongoDB service and an `MONGO_URI` app secret. Local profile and result files are not included in the hosted runtime by default, so those sections may show their empty-state messages.
+The Streamlit Community Cloud app is deployed from repository `Pooja-Ramdas/intrusion-detection`, branch `master`, entry point `app/app.py`. Hosted Python dependencies are listed in the repository-root `requirements.txt`.
+
+The dashboard renders without Docker. MongoDB investigation requires a reachable MongoDB service and an `MONGO_URI` app secret. Local profile and result files are not included in the hosted runtime by default, so those sections may show their empty-state messages.
