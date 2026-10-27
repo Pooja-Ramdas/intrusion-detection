@@ -1,0 +1,302 @@
+{
+  "cicids2017_flow": {
+    "repo_id": "rdpahalavan/CIC-IDS2017",
+    "repo_url": "https://huggingface.co/datasets/rdpahalavan/CIC-IDS2017",
+    "description": "CIC-IDS2017 full flow-level dataset (all 5 days, all attack classes)",
+    "selected_file": "Network-Flows/CICIDS_Flow.parquet",
+    "selected_size_mb": 352.68,
+    "total_files": 57,
+    "files": [
+      {
+        "name": ".gitattributes",
+        "size_bytes": 6400,
+        "size_mb": 0.01
+      },
+      {
+        "name": "Network-Flows/CICIDS_Flow.parquet",
+        "size_bytes": 369814810,
+        "size_mb": 352.68
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_1.parquet",
+        "size_bytes": 4262871602,
+        "size_mb": 4065.39
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_10.parquet",
+        "size_bytes": 862724453,
+        "size_mb": 822.76
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_11.parquet",
+        "size_bytes": 3399128755,
+        "size_mb": 3241.66
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_12.parquet",
+        "size_bytes": 2363738429,
+        "size_mb": 2254.24
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_13.parquet",
+        "size_bytes": 2232734751,
+        "size_mb": 2129.3
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_14.parquet",
+        "size_bytes": 1958805809,
+        "size_mb": 1868.06
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_15.parquet",
+        "size_bytes": 2307399740,
+        "size_mb": 2200.51
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_16.parquet",
+        "size_bytes": 2238521483,
+        "size_mb": 2134.82
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_17.parquet",
+        "size_bytes": 1412957537,
+        "size_mb": 1347.5
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_18.parquet",
+        "size_bytes": 393316834,
+        "size_mb": 375.1
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_2.parquet",
+        "size_bytes": 2379512484,
+        "size_mb": 2269.28
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_3.parquet",
+        "size_bytes": 2356734269,
+        "size_mb": 2247.56
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_4.parquet",
+        "size_bytes": 2363877447,
+        "size_mb": 2254.37
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_5.parquet",
+        "size_bytes": 2631336391,
+        "size_mb": 2509.44
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_6.parquet",
+        "size_bytes": 1882476553,
+        "size_mb": 1795.27
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_7.parquet",
+        "size_bytes": 1928053380,
+        "size_mb": 1838.73
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_8.parquet",
+        "size_bytes": 2367342043,
+        "size_mb": 2257.67
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_9.parquet",
+        "size_bytes": 2418770036,
+        "size_mb": 2306.72
+      },
+      {
+        "name": "Packet-Fields/Packet_Fields_File_1.parquet",
+        "size_bytes": 35997234358,
+        "size_mb": 34329.64
+      },
+      {
+        "name": "Packet-Fields/Packet_Fields_File_10.parquet",
+        "size_bytes": 2129278794,
+        "size_mb": 2030.64
+      },
+      {
+        "name": "Packet-Fields/Packet_Fields_File_11.parquet",
+        "size_bytes": 17570793595,
+        "size_mb": 16756.81
+      },
+      {
+        "name": "Packet-Fields/Packet_Fields_File_12.parquet",
+        "size_bytes": 19236622352,
+        "size_mb": 18345.47
+      },
+      {
+        "name": "Packet-Fields/Packet_Fields_File_13.parquet",
+        "size_bytes": 14766732980,
+        "size_mb": 14082.65
+      }
+    ]
+  },
+  "cicids2017_packet": {
+    "repo_id": "rdpahalavan/CIC-IDS2017",
+    "repo_url": "https://huggingface.co/datasets/rdpahalavan/CIC-IDS2017",
+    "description": "CIC-IDS2017 packet/payload-bytes level capture shard with payload hex",
+    "selected_file": "Payload-Bytes/Payload_Bytes_File_18.parquet",
+    "selected_size_mb": 270.25,
+    "total_files": 57,
+    "files": [
+      {
+        "name": ".gitattributes",
+        "size_bytes": 6400,
+        "size_mb": 0.01
+      },
+      {
+        "name": "Network-Flows/CICIDS_Flow.parquet",
+        "size_bytes": 369814810,
+        "size_mb": 352.68
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_1.parquet",
+        "size_bytes": 4262871602,
+        "size_mb": 4065.39
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_10.parquet",
+        "size_bytes": 862724453,
+        "size_mb": 822.76
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_11.parquet",
+        "size_bytes": 3399128755,
+        "size_mb": 3241.66
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_12.parquet",
+        "size_bytes": 2363738429,
+        "size_mb": 2254.24
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_13.parquet",
+        "size_bytes": 2232734751,
+        "size_mb": 2129.3
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_14.parquet",
+        "size_bytes": 1958805809,
+        "size_mb": 1868.06
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_15.parquet",
+        "size_bytes": 2307399740,
+        "size_mb": 2200.51
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_16.parquet",
+        "size_bytes": 2238521483,
+        "size_mb": 2134.82
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_17.parquet",
+        "size_bytes": 1412957537,
+        "size_mb": 1347.5
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_18.parquet",
+        "size_bytes": 393316834,
+        "size_mb": 375.1
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_2.parquet",
+        "size_bytes": 2379512484,
+        "size_mb": 2269.28
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_3.parquet",
+        "size_bytes": 2356734269,
+        "size_mb": 2247.56
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_4.parquet",
+        "size_bytes": 2363877447,
+        "size_mb": 2254.37
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_5.parquet",
+        "size_bytes": 2631336391,
+        "size_mb": 2509.44
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_6.parquet",
+        "size_bytes": 1882476553,
+        "size_mb": 1795.27
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_7.parquet",
+        "size_bytes": 1928053380,
+        "size_mb": 1838.73
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_8.parquet",
+        "size_bytes": 2367342043,
+        "size_mb": 2257.67
+      },
+      {
+        "name": "Packet-Bytes/Packet_Bytes_File_9.parquet",
+        "size_bytes": 2418770036,
+        "size_mb": 2306.72
+      },
+      {
+        "name": "Packet-Fields/Packet_Fields_File_1.parquet",
+        "size_bytes": 35997234358,
+        "size_mb": 34329.64
+      },
+      {
+        "name": "Packet-Fields/Packet_Fields_File_10.parquet",
+        "size_bytes": 2129278794,
+        "size_mb": 2030.64
+      },
+      {
+        "name": "Packet-Fields/Packet_Fields_File_11.parquet",
+        "size_bytes": 17570793595,
+        "size_mb": 16756.81
+      },
+      {
+        "name": "Packet-Fields/Packet_Fields_File_12.parquet",
+        "size_bytes": 19236622352,
+        "size_mb": 18345.47
+      },
+      {
+        "name": "Packet-Fields/Packet_Fields_File_13.parquet",
+        "size_bytes": 14766732980,
+        "size_mb": 14082.65
+      }
+    ]
+  },
+  "unswnb15": {
+    "repo_id": "wwydmanski/UNSW-NB15",
+    "repo_url": "https://huggingface.co/datasets/wwydmanski/UNSW-NB15",
+    "description": "UNSW-NB15 validation flow dataset slice",
+    "selected_file": "test.parquet",
+    "selected_size_mb": 9.17,
+    "total_files": 4,
+    "files": [
+      {
+        "name": ".gitattributes",
+        "size_bytes": 2265,
+        "size_mb": 0.0
+      },
+      {
+        "name": "README.md",
+        "size_bytes": 763,
+        "size_mb": 0.0
+      },
+      {
+        "name": "test.parquet",
+        "size_bytes": 9618034,
+        "size_mb": 9.17
+      },
+      {
+        "name": "train.parquet",
+        "size_bytes": 4538929,
+        "size_mb": 4.33
+      }
+    ]
+  }
+}

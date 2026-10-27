@@ -1,0 +1,36 @@
+{
+  "total_bytes": 552989448,
+  "total_mb": 527.37,
+  "datasets": {
+    "cicids2017_flow": [
+      {
+        "filename": "CICIDS_Flow.parquet",
+        "path": "/data/staging/cicids2017_flow/Network-Flows/CICIDS_Flow.parquet",
+        "size_bytes": 369814810,
+        "size_mb": 352.68
+      }
+    ],
+    "cicids2017_packet": [
+      {
+        "filename": "cicids2017_packet_slice.parquet",
+        "path": "/data/staging/cicids2017_packet/cicids2017_packet_slice.parquet",
+        "size_bytes": 169017675,
+        "size_mb": 161.19
+      }
+    ],
+    "unswnb15": [
+      {
+        "filename": "test.parquet",
+        "path": "/data/staging/unswnb15/test.parquet",
+        "size_bytes": 9618034,
+        "size_mb": 9.17
+      },
+      {
+        "filename": "train.parquet",
+        "path": "/data/staging/unswnb15/train.parquet",
+        "size_bytes": 4538929,
+        "size_mb": 4.33
+      }
+    ]
+  }
+}

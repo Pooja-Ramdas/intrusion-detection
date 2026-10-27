@@ -1,0 +1,752 @@
+{
+  "status": "approved_by_user",
+  "created_utc": "2026-10-26T20:43:34.596511+00:00",
+  "metadata_only": true,
+  "source": "HfApi.list_repo_tree/get_paths_info; nids_datasets.DatasetInfo published per-file counts",
+  "repos": {
+    "cicids2017": {
+      "repo_id": "rdpahalavan/CIC-IDS2017",
+      "revision": "eee96b6abc2c4bb621fd67679a4aa24bddc4be6a",
+      "parquet_inventory": [
+        {
+          "name": "Network-Flows/CICIDS_Flow.parquet",
+          "size_bytes": 369814810,
+          "sha256": "e64f6adfbcb7f96b018cf36c731be64ef4de3353ccd7340b190590734a0dda35"
+        },
+        {
+          "name": "Packet-Bytes/Packet_Bytes_File_1.parquet",
+          "size_bytes": 4262871602,
+          "sha256": "d1ad8847c528c679d267e8c70a5dd59c902f037161c28c42b5e5b4697fd7ebe2"
+        },
+        {
+          "name": "Packet-Bytes/Packet_Bytes_File_10.parquet",
+          "size_bytes": 862724453,
+          "sha256": "d18f2fdb1ae688696e31cce616380f0d25f7a8285a19d1d5809dc9e5b60b33f4"
+        },
+        {
+          "name": "Packet-Bytes/Packet_Bytes_File_11.parquet",
+          "size_bytes": 3399128755,
+          "sha256": "ab4c99b09e8969125c7f5147d2850cc0c0e265b14279ad2c6a7d6829cf139b16"
+        },
+        {
+          "name": "Packet-Bytes/Packet_Bytes_File_12.parquet",
+          "size_bytes": 2363738429,
+          "sha256": "576770ab4c40e981d22754a163d429664f28edd2eaa275dd64e752b22a3f6860"
+        },
+        {
+          "name": "Packet-Bytes/Packet_Bytes_File_13.parquet",
+          "size_bytes": 2232734751,
+          "sha256": "43177632aabc61d1fb95c530904877c843ca582c663f225426e235274362829b"
+        },
+        {
+          "name": "Packet-Bytes/Packet_Bytes_File_14.parquet",
+          "size_bytes": 1958805809,
+          "sha256": "2949db089330acbd6af6a1b9685cbb167981119689afe6f30b372f6b13c2d000"
+        },
+        {
+          "name": "Packet-Bytes/Packet_Bytes_File_15.parquet",
+          "size_bytes": 2307399740,
+          "sha256": "ad10b06077922a57941c04c1b77e490959dd049ac6c45c9c19f09e44d543100e"
+        },
+        {
+          "name": "Packet-Bytes/Packet_Bytes_File_16.parquet",
+          "size_bytes": 2238521483,
+          "sha256": "c1e296344292ebc558ecdd36c409d65eb89f5c4fa8ced257cf83707e7a46e48a"
+        },
+        {
+          "name": "Packet-Bytes/Packet_Bytes_File_17.parquet",
+          "size_bytes": 1412957537,
+          "sha256": "ec3fb6ecc7a319e38cb6e74b25dbf42eef345b424ba011382ef838a12d4d1378"
+        },
+        {
+          "name": "Packet-Bytes/Packet_Bytes_File_18.parquet",
+          "size_bytes": 393316834,
+          "sha256": "afdd7bcb7965a834f8d8348c7f2d038d09592ee7b7c9e411737e549839f775c6"
+        },
+        {
+          "name": "Packet-Bytes/Packet_Bytes_File_2.parquet",
+          "size_bytes": 2379512484,
+          "sha256": "7a02bc067ee7da8aca8ade572ca4b1a8f17ee732919c929b29c1db4b11c9d481"
+        },
+        {
+          "name": "Packet-Bytes/Packet_Bytes_File_3.parquet",
+          "size_bytes": 2356734269,
+          "sha256": "8a377b66d73f70443b326e451b61f50f4b4c929154a7fd65aceea747d2c9dc18"
+        },
+        {
+          "name": "Packet-Bytes/Packet_Bytes_File_4.parquet",
+          "size_bytes": 2363877447,
+          "sha256": "6fa7f8871e993045249ef00ed6eee55a57ed1c52e87b432aa1e8e0ecbb559acf"
+        },
+        {
+          "name": "Packet-Bytes/Packet_Bytes_File_5.parquet",
+          "size_bytes": 2631336391,
+          "sha256": "8984eb24408c9f4034a6b6459ffcf549822a35866cd6a5d1c776fdb301284788"
+        },
+        {
+          "name": "Packet-Bytes/Packet_Bytes_File_6.parquet",
+          "size_bytes": 1882476553,
+          "sha256": "c4451e7757f074fabe8cb15e4dab83ba6d3b1c58177b7e9a979b919e62b20137"
+        },
+        {
+          "name": "Packet-Bytes/Packet_Bytes_File_7.parquet",
+          "size_bytes": 1928053380,
+          "sha256": "bcc6ca4fc018c8771aff03d27c552070ed2ebf2a4009a97d812f2a1900b2644f"
+        },
+        {
+          "name": "Packet-Bytes/Packet_Bytes_File_8.parquet",
+          "size_bytes": 2367342043,
+          "sha256": "765a8b0ab92da5e900b2e8f497b88e77fde3d0c61307b77f8774b3ce2c62f466"
+        },
+        {
+          "name": "Packet-Bytes/Packet_Bytes_File_9.parquet",
+          "size_bytes": 2418770036,
+          "sha256": "673151271d4d37b9d62eafc399cf2b2f7e6dd1e164e8b89b90a98c4ac39b47f0"
+        },
+        {
+          "name": "Packet-Fields/Packet_Fields_File_1.parquet",
+          "size_bytes": 35997234358,
+          "sha256": "bc0ef6c8a4a4dc23cc7df0d143703f5d22bdad9eabf3404b30e998ea7aae3659"
+        },
+        {
+          "name": "Packet-Fields/Packet_Fields_File_10.parquet",
+          "size_bytes": 2129278794,
+          "sha256": "e2e3f05bd96e1d93e60c1d1b36071707d16bef7f9b4e258f03a23a8fcf1c0efe"
+        },
+        {
+          "name": "Packet-Fields/Packet_Fields_File_11.parquet",
+          "size_bytes": 17570793595,
+          "sha256": "9d3c9b79e988d39ddb46fafc290b49c664b746c39e05168b7c6004e518851159"
+        },
+        {
+          "name": "Packet-Fields/Packet_Fields_File_12.parquet",
+          "size_bytes": 19236622352,
+          "sha256": "08a44ec58433366ba7cdfc3959025ea10a263d5aea6b2ff1ce0bf48f1b1b64cd"
+        },
+        {
+          "name": "Packet-Fields/Packet_Fields_File_13.parquet",
+          "size_bytes": 14766732980,
+          "sha256": "180727025d7fb6f46446d523879a68c5bf275206036df5d19d461c02092fd753"
+        },
+        {
+          "name": "Packet-Fields/Packet_Fields_File_14.parquet",
+          "size_bytes": 10785955025,
+          "sha256": "7a0099e97bae5babac75c60396340d82ef3df473bcd5cced08a7dc3736b6604e"
+        },
+        {
+          "name": "Packet-Fields/Packet_Fields_File_15.parquet",
+          "size_bytes": 19200401280,
+          "sha256": "42eb2cad6202e22601e85457c77550f2cd8c9fafaf37f82359da139982849c34"
+        },
+        {
+          "name": "Packet-Fields/Packet_Fields_File_16.parquet",
+          "size_bytes": 14521081702,
+          "sha256": "f59738ff3f7187e95e8970a073f2edbbc4febc51cf79f71fc37a3ba422c1c758"
+        },
+        {
+          "name": "Packet-Fields/Packet_Fields_File_17.parquet",
+          "size_bytes": 5643796118,
+          "sha256": "fce9d095aaf1579b0b51f299a8ef01fd3bd03ed37f8a6cc6ff691ea8e4cc35a4"
+        },
+        {
+          "name": "Packet-Fields/Packet_Fields_File_18.parquet",
+          "size_bytes": 1517973806,
+          "sha256": "da4e69d0582fb82d91e9ed307e2dc49ade7feac4a6abe9d59a046ccc49bdc834"
+        },
+        {
+          "name": "Packet-Fields/Packet_Fields_File_2.parquet",
+          "size_bytes": 14525900824,
+          "sha256": "36045597072c2c781800fe88bffe0150dff8dfaf34778906057a7d860c0fa20a"
+        },
+        {
+          "name": "Packet-Fields/Packet_Fields_File_3.parquet",
+          "size_bytes": 13627838422,
+          "sha256": "583554aea9dba84bb688a86c863d91eba4e14238ea0430fde6c352958da5608d"
+        },
+        {
+          "name": "Packet-Fields/Packet_Fields_File_4.parquet",
+          "size_bytes": 19802108212,
+          "sha256": "0ca3127847b1a4f0364b7a2c5bc49d6388f7a19e1bc3de07870172bd4ebb4d7f"
+        },
+        {
+          "name": "Packet-Fields/Packet_Fields_File_5.parquet",
+          "size_bytes": 20996573057,
+          "sha256": "bc9128e13288a391150eef4786c5f3929013ad8445ea518fd1059d720edccacc"
+        },
+        {
+          "name": "Packet-Fields/Packet_Fields_File_6.parquet",
+          "size_bytes": 9844487633,
+          "sha256": "a1307986bcf93eb7b979c2320488440e21c9e1bfde3db5921674d44bfde93390"
+        },
+        {
+          "name": "Packet-Fields/Packet_Fields_File_7.parquet",
+          "size_bytes": 12059472325,
+          "sha256": "7eb69f05fe978facd3ba98baa22fbff320bafb8f27471bd7de062288ece901cb"
+        },
+        {
+          "name": "Packet-Fields/Packet_Fields_File_8.parquet",
+          "size_bytes": 19865803248,
+          "sha256": "d3f7b7a354a360d36f0cf0387a0ac0afa1065da097080acf7f3f0471e92d5698"
+        },
+        {
+          "name": "Packet-Fields/Packet_Fields_File_9.parquet",
+          "size_bytes": 19948191283,
+          "sha256": "7c85392865424098925b0ff4dd7d7a8702671e2bf1bc90da90705d8f594b53ad"
+        },
+        {
+          "name": "Payload-Bytes/Payload_Bytes_File_1.parquet",
+          "size_bytes": 3978606338,
+          "sha256": "8b356d1cbe26e4dfdc7d37dc84a8e6ec80ce2494f51acffd4ba63a632733cc50"
+        },
+        {
+          "name": "Payload-Bytes/Payload_Bytes_File_10.parquet",
+          "size_bytes": 494787296,
+          "sha256": "6b4d94ad748ab13d47ceef7d05bfe1088bad253f53c417e9d4ed13e59797ae77"
+        },
+        {
+          "name": "Payload-Bytes/Payload_Bytes_File_11.parquet",
+          "size_bytes": 2691287304,
+          "sha256": "7441d98386d7cd50425d691846e6a21b1bbc00e59a361f7cc92b1c7d01b7b3bd"
+        },
+        {
+          "name": "Payload-Bytes/Payload_Bytes_File_12.parquet",
+          "size_bytes": 2183748223,
+          "sha256": "53f21d99f758b623ac20369a1de61ffa00ecdc48519f8813aeaa0fccd1a74e91"
+        },
+        {
+          "name": "Payload-Bytes/Payload_Bytes_File_13.parquet",
+          "size_bytes": 1884029359,
+          "sha256": "1ccc761bb32546136fa7b9951722c4a26a52e7fc515d9050df2d34bd410c8317"
+        },
+        {
+          "name": "Payload-Bytes/Payload_Bytes_File_14.parquet",
+          "size_bytes": 1568030050,
+          "sha256": "30b9b6c3a1392c1e9b7042edc57976b157072ae3b24b21dead7610fc0a81901f"
+        },
+        {
+          "name": "Payload-Bytes/Payload_Bytes_File_15.parquet",
+          "size_bytes": 2174382771,
+          "sha256": "4c657e499cec0b4af3580974d3a0389f2f25a14f60946c185a636943f4ca24ea"
+        },
+        {
+          "name": "Payload-Bytes/Payload_Bytes_File_16.parquet",
+          "size_bytes": 1857787437,
+          "sha256": "28b1019e1c11194d86b3bd762b5625c5399f2c4382e18723b89a5560a6c98e29"
+        },
+        {
+          "name": "Payload-Bytes/Payload_Bytes_File_17.parquet",
+          "size_bytes": 998056654,
+          "sha256": "ee4fe2741ee1e1521ab98e54f603c085409fa1a4409f3cec6ca4d0e238a2a115"
+        },
+        {
+          "name": "Payload-Bytes/Payload_Bytes_File_18.parquet",
+          "size_bytes": 283382806,
+          "sha256": "f8b1fb3b51da408c4ceb4c68a19cadead09f83282c85a5e2675b6c15437c8460"
+        },
+        {
+          "name": "Payload-Bytes/Payload_Bytes_File_2.parquet",
+          "size_bytes": 1977480777,
+          "sha256": "f4c9a1bd50c175a162934ff46c43bc1e2eaeb58876082a342b584425a8494679"
+        },
+        {
+          "name": "Payload-Bytes/Payload_Bytes_File_3.parquet",
+          "size_bytes": 1945460059,
+          "sha256": "e4a944f0eae7ccb2de82d714afe42182fab8da5999faeb1542a518074ec54a75"
+        },
+        {
+          "name": "Payload-Bytes/Payload_Bytes_File_4.parquet",
+          "size_bytes": 2188802450,
+          "sha256": "661816863480933df2c4f402b09c233ca2bdf16472ee4d249ea5ca3b8c7590be"
+        },
+        {
+          "name": "Payload-Bytes/Payload_Bytes_File_5.parquet",
+          "size_bytes": 2392339076,
+          "sha256": "a0020666ddb252448bba74429ab71088cf540837a1c8ccc924b5d27122f40bfe"
+        },
+        {
+          "name": "Payload-Bytes/Payload_Bytes_File_6.parquet",
+          "size_bytes": 1521303798,
+          "sha256": "8efc08b15c7842d054fc94dc411a5eef62fe7233ca39ca3d4e8c945b70464799"
+        },
+        {
+          "name": "Payload-Bytes/Payload_Bytes_File_7.parquet",
+          "size_bytes": 1633639277,
+          "sha256": "d6c5ef863b2bba12edd2bb2c9141de25e2634d0e0b05a0f2694293acfdc9e4c6"
+        },
+        {
+          "name": "Payload-Bytes/Payload_Bytes_File_8.parquet",
+          "size_bytes": 2216184399,
+          "sha256": "2857c75b03c4442a97ed238c9e530b7e3daf6bdf2f63dd043c244f577aef052d"
+        },
+        {
+          "name": "Payload-Bytes/Payload_Bytes_File_9.parquet",
+          "size_bytes": 2185352994,
+          "sha256": "959ea6f1435d66f63902c0c7e1a1ce71a91dca194145a5a023bb6de71f7cf0a9"
+        }
+      ]
+    },
+    "unswnb15": {
+      "repo_id": "wwydmanski/UNSW-NB15",
+      "revision": "961c58a6aab1f4736f6a34be968d672a515a886e",
+      "parquet_inventory": [
+        {
+          "name": "test.parquet",
+          "size_bytes": 9618034,
+          "sha256": "f6989e65032e75770f37a5fa64d1d556effd6ac6240c99b0ab4df73b490c1918"
+        },
+        {
+          "name": "train.parquet",
+          "size_bytes": 4538929,
+          "sha256": "a0270aeb2219aaa686551cdf6d4f94c4478b69f819225176149606cd1492d5e1"
+        }
+      ]
+    }
+  },
+  "caps_bytes": {
+    "cicids2017_packet_bytes": 40000000000,
+    "cicids2017_flow_bytes": 3000000000,
+    "unswnb15_bytes": 6000000000,
+    "staging_bytes": 4000000000
+  },
+  "plan": {
+    "cicids2017_packet": {
+      "subset": "Packet-Bytes (original CIC-IDS2017 packet-level source files)",
+      "cap_bytes": 40000000000,
+      "selected_bytes": 30076375901,
+      "existing_preserved_file": {
+        "hdfs_path": "/bda/raw/cicids2017_packet/cicids2017_packet_slice.parquet",
+        "size_bytes": 169017675,
+        "source_provenance": "Existing script stages Packet_Bytes_File_18.parquet and writes the first 65% of rows; preserved and excluded from unique-source-byte target."
+      },
+      "files": [
+        {
+          "repo_id": "rdpahalavan/CIC-IDS2017",
+          "path": "Packet-Bytes/Packet_Bytes_File_1.parquet",
+          "size_bytes": 4262871602,
+          "sha256": "d1ad8847c528c679d267e8c70a5dd59c902f037161c28c42b5e5b4697fd7ebe2",
+          "file_id": 1,
+          "day_stratum": "Monday",
+          "published_label_counts": {
+            "BENIGN": 4822905
+          },
+          "published_row_count": 4822905,
+          "selection": "whole_source_file",
+          "destination": "/bda/raw/cicids2017_packet/Packet_Bytes_File_1.parquet",
+          "action": "download_after_approval"
+        },
+        {
+          "repo_id": "rdpahalavan/CIC-IDS2017",
+          "path": "Packet-Bytes/Packet_Bytes_File_2.parquet",
+          "size_bytes": 2379512484,
+          "sha256": "7a02bc067ee7da8aca8ade572ca4b1a8f17ee732919c929b29c1db4b11c9d481",
+          "file_id": 2,
+          "day_stratum": "Monday",
+          "published_label_counts": {
+            "BENIGN": 3571097
+          },
+          "published_row_count": 3571097,
+          "selection": "whole_source_file",
+          "destination": "/bda/raw/cicids2017_packet/Packet_Bytes_File_2.parquet",
+          "action": "download_after_approval"
+        },
+        {
+          "repo_id": "rdpahalavan/CIC-IDS2017",
+          "path": "Packet-Bytes/Packet_Bytes_File_3.parquet",
+          "size_bytes": 2356734269,
+          "sha256": "8a377b66d73f70443b326e451b61f50f4b4c929154a7fd65aceea747d2c9dc18",
+          "file_id": 3,
+          "day_stratum": "Tuesday",
+          "published_label_counts": {
+            "BENIGN": 3556526,
+            "FTP-Patator": 1953
+          },
+          "published_row_count": 3558479,
+          "selection": "whole_source_file",
+          "destination": "/bda/raw/cicids2017_packet/Packet_Bytes_File_3.parquet",
+          "action": "download_after_approval"
+        },
+        {
+          "repo_id": "rdpahalavan/CIC-IDS2017",
+          "path": "Packet-Bytes/Packet_Bytes_File_6.parquet",
+          "size_bytes": 1882476553,
+          "sha256": "c4451e7757f074fabe8cb15e4dab83ba6d3b1c58177b7e9a979b919e62b20137",
+          "file_id": 6,
+          "day_stratum": "Tuesday",
+          "published_label_counts": {
+            "BENIGN": 2637797,
+            "FTP-Patator": 28602,
+            "SSH-Patator": 38680
+          },
+          "published_row_count": 2705079,
+          "selection": "whole_source_file",
+          "destination": "/bda/raw/cicids2017_packet/Packet_Bytes_File_6.parquet",
+          "action": "download_after_approval"
+        },
+        {
+          "repo_id": "rdpahalavan/CIC-IDS2017",
+          "path": "Packet-Bytes/Packet_Bytes_File_9.parquet",
+          "size_bytes": 2418770036,
+          "sha256": "673151271d4d37b9d62eafc399cf2b2f7e6dd1e164e8b89b90a98c4ac39b47f0",
+          "file_id": 9,
+          "day_stratum": "Wednesday",
+          "published_label_counts": {
+            "BENIGN": 2948428,
+            "DoS slowloris": 47519,
+            "DoS Slowhttptest": 19866
+          },
+          "published_row_count": 3015813,
+          "selection": "whole_source_file",
+          "destination": "/bda/raw/cicids2017_packet/Packet_Bytes_File_9.parquet",
+          "action": "download_after_approval"
+        },
+        {
+          "repo_id": "rdpahalavan/CIC-IDS2017",
+          "path": "Packet-Bytes/Packet_Bytes_File_10.parquet",
+          "size_bytes": 862724453,
+          "sha256": "d18f2fdb1ae688696e31cce616380f0d25f7a8285a19d1d5809dc9e5b60b33f4",
+          "file_id": 10,
+          "day_stratum": "Wednesday",
+          "published_label_counts": {
+            "BENIGN": 422225,
+            "DoS Slowhttptest": 19675,
+            "DoS Hulk": 1459567
+          },
+          "published_row_count": 1901467,
+          "selection": "whole_source_file",
+          "destination": "/bda/raw/cicids2017_packet/Packet_Bytes_File_10.parquet",
+          "action": "download_after_approval"
+        },
+        {
+          "repo_id": "rdpahalavan/CIC-IDS2017",
+          "path": "Packet-Bytes/Packet_Bytes_File_11.parquet",
+          "size_bytes": 3399128755,
+          "sha256": "ab4c99b09e8969125c7f5147d2850cc0c0e265b14279ad2c6a7d6829cf139b16",
+          "file_id": 11,
+          "day_stratum": "Wednesday",
+          "published_label_counts": {
+            "BENIGN": 4418585,
+            "DoS slowloris": 41,
+            "DoS Hulk": 786683,
+            "Heartbleed": 49296,
+            "DoS GoldenEye": 104513
+          },
+          "published_row_count": 5359118,
+          "selection": "whole_source_file",
+          "destination": "/bda/raw/cicids2017_packet/Packet_Bytes_File_11.parquet",
+          "action": "download_after_approval"
+        },
+        {
+          "repo_id": "rdpahalavan/CIC-IDS2017",
+          "path": "Packet-Bytes/Packet_Bytes_File_12.parquet",
+          "size_bytes": 2363738429,
+          "sha256": "576770ab4c40e981d22754a163d429664f28edd2eaa275dd64e752b22a3f6860",
+          "file_id": 12,
+          "day_stratum": "Thursday",
+          "published_label_counts": {
+            "BENIGN": 2651388,
+            "Web Attack – Brute Force": 12370
+          },
+          "published_row_count": 2663758,
+          "selection": "whole_source_file",
+          "destination": "/bda/raw/cicids2017_packet/Packet_Bytes_File_12.parquet",
+          "action": "download_after_approval"
+        },
+        {
+          "repo_id": "rdpahalavan/CIC-IDS2017",
+          "path": "Packet-Bytes/Packet_Bytes_File_13.parquet",
+          "size_bytes": 2232734751,
+          "sha256": "43177632aabc61d1fb95c530904877c843ca582c663f225426e235274362829b",
+          "file_id": 13,
+          "day_stratum": "Thursday",
+          "published_label_counts": {
+            "BENIGN": 3109436,
+            "Web Attack – Brute Force": 17873,
+            "Web Attack – XSS": 9344,
+            "Web Attack – SQL Injection": 126
+          },
+          "published_row_count": 3136779,
+          "selection": "whole_source_file",
+          "destination": "/bda/raw/cicids2017_packet/Packet_Bytes_File_13.parquet",
+          "action": "download_after_approval"
+        },
+        {
+          "repo_id": "rdpahalavan/CIC-IDS2017",
+          "path": "Packet-Bytes/Packet_Bytes_File_14.parquet",
+          "size_bytes": 1958805809,
+          "sha256": "2949db089330acbd6af6a1b9685cbb167981119689afe6f30b372f6b13c2d000",
+          "file_id": 14,
+          "day_stratum": "Thursday",
+          "published_label_counts": {
+            "BENIGN": 2845250,
+            "Infiltration": 59754
+          },
+          "published_row_count": 2905004,
+          "selection": "whole_source_file",
+          "destination": "/bda/raw/cicids2017_packet/Packet_Bytes_File_14.parquet",
+          "action": "download_after_approval"
+        },
+        {
+          "repo_id": "rdpahalavan/CIC-IDS2017",
+          "path": "Packet-Bytes/Packet_Bytes_File_15.parquet",
+          "size_bytes": 2307399740,
+          "sha256": "ad10b06077922a57941c04c1b77e490959dd049ac6c45c9c19f09e44d543100e",
+          "file_id": 15,
+          "day_stratum": "Friday",
+          "published_label_counts": {
+            "BENIGN": 2558990
+          },
+          "published_row_count": 2558990,
+          "selection": "whole_source_file",
+          "destination": "/bda/raw/cicids2017_packet/Packet_Bytes_File_15.parquet",
+          "action": "download_after_approval"
+        },
+        {
+          "repo_id": "rdpahalavan/CIC-IDS2017",
+          "path": "Packet-Bytes/Packet_Bytes_File_16.parquet",
+          "size_bytes": 2238521483,
+          "sha256": "c1e296344292ebc558ecdd36c409d65eb89f5c4fa8ced257cf83707e7a46e48a",
+          "file_id": 16,
+          "day_stratum": "Friday",
+          "published_label_counts": {
+            "BENIGN": 3182740,
+            "Bot": 12853,
+            "PortScan": 45
+          },
+          "published_row_count": 3195638,
+          "selection": "whole_source_file",
+          "destination": "/bda/raw/cicids2017_packet/Packet_Bytes_File_16.parquet",
+          "action": "download_after_approval"
+        },
+        {
+          "repo_id": "rdpahalavan/CIC-IDS2017",
+          "path": "Packet-Bytes/Packet_Bytes_File_17.parquet",
+          "size_bytes": 1412957537,
+          "sha256": "ec3fb6ecc7a319e38cb6e74b25dbf42eef345b424ba011382ef838a12d4d1378",
+          "file_id": 17,
+          "day_stratum": "Friday",
+          "published_label_counts": {
+            "BENIGN": 1920222,
+            "PortScan": 321386,
+            "DDoS": 942879
+          },
+          "published_row_count": 3184487,
+          "selection": "whole_source_file",
+          "destination": "/bda/raw/cicids2017_packet/Packet_Bytes_File_17.parquet",
+          "action": "download_after_approval"
+        }
+      ],
+      "day_coverage": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "attack_class_coverage": [
+        "Bot",
+        "DDoS",
+        "DoS GoldenEye",
+        "DoS Hulk",
+        "DoS Slowhttptest",
+        "DoS slowloris",
+        "FTP-Patator",
+        "Heartbleed",
+        "Infiltration",
+        "PortScan",
+        "SSH-Patator",
+        "Web Attack – Brute Force",
+        "Web Attack – SQL Injection",
+        "Web Attack – XSS"
+      ],
+      "all_published_attack_classes_covered": true,
+      "attack_class_coverage_gaps": [],
+      "rare_class_file_coverage": {
+        "Infiltration": [
+          "Packet_Bytes_File_14.parquet"
+        ],
+        "Heartbleed": [
+          "Packet_Bytes_File_11.parquet"
+        ],
+        "Web Attack – SQL Injection": [
+          "Packet_Bytes_File_13.parquet"
+        ],
+        "Web Attack – XSS": [
+          "Packet_Bytes_File_13.parquet"
+        ],
+        "Web Attack – Brute Force": [
+          "Packet_Bytes_File_12.parquet",
+          "Packet_Bytes_File_13.parquet"
+        ],
+        "SSH-Patator": [
+          "Packet_Bytes_File_6.parquet",
+          "Packet_Bytes_File_7.parquet"
+        ]
+      },
+      "excluded_file18": {
+        "path": "Packet-Bytes/Packet_Bytes_File_18.parquet",
+        "size_bytes": 393316834,
+        "reason": "Existing preserved working slice was derived from this source shard; avoid re-ingesting overlapping source rows until revision/checksum-level deduplication is approved."
+      },
+      "rare_class_policy": "Keep complete whole source files for required rare classes; no row slicing or synthesis.",
+      "previous_cap_bytes": 17000000000,
+      "cap_change_reason": "The 17 GB packet cap cannot meet the newly requested 40 GB source target; 40 GB is the revised upper budget, while the 70 GB physical footprint, 4 GB staging cap, and 12 GB free-space floor remain hard gates.",
+      "target_bytes": 30000000000,
+      "target_status": "met_by_new_packet_source_files"
+    },
+    "cicids2017_flow": {
+      "cap_bytes": 3000000000,
+      "selected_bytes": 369814810,
+      "files": [
+        {
+          "repo_id": "rdpahalavan/CIC-IDS2017",
+          "path": "Network-Flows/CICIDS_Flow.parquet",
+          "size_bytes": 369814810,
+          "sha256": "e64f6adfbcb7f96b018cf36c731be64ef4de3353ccd7340b190590734a0dda35",
+          "selection": "entire_flow_file",
+          "destination": "/bda/raw/cicids2017_flow/CICIDS_Flow.parquet",
+          "action": "verify_existing_then_skip_or_download_after_approval"
+        }
+      ],
+      "selection": "Entire existing source file; measured locally in HDFS; checksum/size verify and skip if identical.",
+      "measured_existing": {
+        "row_count": 2827677,
+        "class_distribution": {
+          "BENIGN": 2271122,
+          "DoS Hulk": 230123,
+          "PortScan": 158804,
+          "DDoS": 128025,
+          "DoS GoldenEye": 10293,
+          "FTP-Patator": 7935,
+          "SSH-Patator": 5897,
+          "DoS slowloris": 5796,
+          "DoS Slowhttptest": 5499,
+          "Bot": 1956,
+          "Web Attack – Brute Force": 1507,
+          "Web Attack – XSS": 652,
+          "Infiltration": 36,
+          "Web Attack – Sql Injection": 21,
+          "Heartbleed": 11
+        },
+        "method": "Read-only Spark count/groupBy over existing HDFS Parquet; local measurement, not published metadata."
+      }
+    },
+    "unswnb15": {
+      "cap_bytes": 6000000000,
+      "selected_bytes": 14156963,
+      "files": [
+        {
+          "repo_id": "wwydmanski/UNSW-NB15",
+          "path": "train.parquet",
+          "size_bytes": 4538929,
+          "sha256": "a0270aeb2219aaa686551cdf6d4f94c4478b69f819225176149606cd1492d5e1",
+          "selection": "entire_file",
+          "destination": "/bda/raw/unswnb15/train.parquet",
+          "action": "verify_existing_then_skip_or_halt_on_conflict",
+          "measured_existing": {
+            "row_count": 82332,
+            "class_distribution": {
+              "Normal": 37000,
+              "Generic": 18871,
+              "Exploits": 11132,
+              "Fuzzers": 6062,
+              "DoS": 4089,
+              "Reconnaissance": 3496,
+              "Analysis": 677,
+              "Backdoor": 583,
+              "Shellcode": 378,
+              "Worms": 44
+            }
+          }
+        },
+        {
+          "repo_id": "wwydmanski/UNSW-NB15",
+          "path": "test.parquet",
+          "size_bytes": 9618034,
+          "sha256": "f6989e65032e75770f37a5fa64d1d556effd6ac6240c99b0ab4df73b490c1918",
+          "selection": "entire_file",
+          "destination": "/bda/raw/unswnb15/test.parquet",
+          "action": "verify_existing_then_skip_or_halt_on_conflict",
+          "measured_existing": {
+            "row_count": 175341,
+            "class_distribution": {
+              "Normal": 56000,
+              "Generic": 40000,
+              "Exploits": 33393,
+              "Fuzzers": 18184,
+              "DoS": 12264,
+              "Reconnaissance": 10491,
+              "Analysis": 2000,
+              "Backdoor": 1746,
+              "Shellcode": 1133,
+              "Worms": 130
+            }
+          }
+        }
+      ],
+      "selection": "Both existing validation files; measured per file from HDFS; checksum/size verify and skip if identical."
+    },
+    "staging": {
+      "max_bytes": 4000000000,
+      "max_selected_file_bytes": 4262871602,
+      "oversize_file": {
+        "path": "Packet-Bytes/Packet_Bytes_File_1.parquet",
+        "size_bytes": 4262871602,
+        "over_by_bytes": 262871602
+      },
+      "transfer_order": "One file at a time; files above 4 GB use resumable byte-range chunks staged on D: at 512 MB each; verify full-file SHA-256 and HDFS size.",
+      "chunk_size_bytes": 512000000
+    },
+    "totals": {
+      "selected_source_bytes": 30460347674,
+      "selected_source_decimal_gb": 30.460347674,
+      "new_packet_download_bytes": 30076375901,
+      "existing_flow_and_unsw_bytes": 383971773,
+      "target_bytes": 30000000000,
+      "target_status": "met by new Packet-Bytes files alone",
+      "existing_packet_slice_bytes_excluded_from_target": 169017675,
+      "excluded_file18_bytes": 393316834,
+      "existing_hdfs_data_policy": "Verify existing CIC flow/UNSW and skip; preserve legacy slice; do not select file 18."
+    },
+    "physical_budget": {
+      "measured_active_hdfs_mongo_bytes": 2591800061,
+      "measured_retained_rollback_volumes_gb_rounded": 2.613,
+      "proposed_packet_bytes": 30076375901,
+      "largest_in_progress_hdfs_replica_extra_bytes": 4262871602,
+      "staging_peak_cap_bytes": 4000000000,
+      "projected_peak_before_new_processing_outputs_bytes_approx": 43544047564,
+      "projected_peak_before_new_processing_outputs_gb_approx": 43.544,
+      "physical_dataset_cap_bytes": 70000000000,
+      "remaining_for_new_clean_features_spark_temp_mongo_growth_models_bytes_approx": 26455952436,
+      "note": "Conservative: current active HDFS+Mongo + rounded retained-volume usage + selected packet source + one temporary HDFS replica of largest file + full 4 GB staging allowance. Derived output sizes remain unmeasured."
+    },
+    "transfer_blockers": [
+      "File 1 is streamed as 512 MB resumable byte ranges to D: staging and assembled in HDFS; staging cap remains 4 GB.",
+      "CIC flow and UNSW already exist in HDFS; verify size/SHA-256 then skip.",
+      "File 18 excluded because preserved working slice is derived from that shard."
+    ],
+    "progress_snapshot": {
+      "observed_utc": "2026-10-26T21:06:40.370777Z",
+      "d_free_gb_last_guard": 93.63,
+      "staging_bytes_last_observed": 2382364673,
+      "hdfs_verified_partial_bytes": 536870912,
+      "final_files_completed": 0,
+      "staged_range_bytes": 536870912,
+      "staging_contains_incomplete_legacy_cache_bytes": 1845493761,
+      "note": "The 1,845,493,761 B HF incomplete cache is from the interrupted whole-file attempt and is not counted toward source target; current range staging remains D:."
+    }
+  },
+  "nids_datasets_version": "0.1.5",
+  "data_version_note": "Published packet label counts are nids-datasets 0.1.5 metadata; packet file inventory is Hugging Face repo revision eee96b6abc2c4bb621fd67679a4aa24bddc4be6a. Local measured flow/UNSW counts refer to the existing HDFS paths; their source revision was not reverified in this revision.",
+  "execution_notes": {
+    "approval": "User explicitly authorized ingestion in latest task message.",
+    "data_version": "eee96b6abc2c4bb621fd67679a4aa24bddc4be6a",
+    "seed": 0,
+    "new_packet_target_met": true,
+    "downloads_started": true,
+    "run_state": "in_progress",
+    "verified_range_bytes_in_hdfs_temp": 536870912,
+    "completed_source_files": 0,
+    "last_observed_utc": "2026-10-26T21:06:40.370777Z",
+    "partial_hdfs_path": "/tmp/bda-ingest/Packet_Bytes_File_1.parquet.d1ad8847c528.partial"
+  }
+}

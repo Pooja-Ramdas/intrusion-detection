@@ -1,0 +1,131 @@
+[
+  {
+    "experiment": "task4_20261027_quick1",
+    "task": "binary",
+    "algorithm": "rf",
+    "train_rows": 1799,
+    "test_rows": 767,
+    "features": 76,
+    "accuracy": 0.9387222946544981,
+    "weighted_precision": 0.9430597225931103,
+    "weighted_recall": 0.9387222946544981,
+    "weighted_f1": 0.9341546341196002,
+    "macro_f1": 0.9341546341196002,
+    "seconds": 195.89,
+    "seed": 20261027,
+    "importance_top10": [
+      [
+        "init_win_bytes_forward",
+        0.18482752048348325
+      ],
+      [
+        "bwd_packet_length_min",
+        0.16171166920346883
+      ],
+      [
+        "init_win_bytes_backward",
+        0.09256386251808525
+      ],
+      [
+        "total_length_of_fwd_packets",
+        0.08319811637509204
+      ],
+      [
+        "protocol_num",
+        0.07661060210158313
+      ],
+      [
+        "fwd_packet_length_max",
+        0.06451776123313481
+      ],
+      [
+        "min_packet_length",
+        0.05559593577481224
+      ],
+      [
+        "bwd_iat_max",
+        0.04063688233576164
+      ],
+      [
+        "bwd_packet_length_max",
+        0.03581319567489662
+      ],
+      [
+        "active_min",
+        0.022934735218164224
+      ]
+    ]
+  },
+  {
+    "experiment": "task4_20261027_quick1",
+    "task": "binary",
+    "algorithm": "gbt",
+    "train_rows": 1799,
+    "test_rows": 767,
+    "features": 76,
+    "accuracy": 0.9308996088657105,
+    "weighted_precision": 0.9295495752512264,
+    "weighted_recall": 0.9308996088657107,
+    "weighted_f1": 0.9279956695363576,
+    "macro_f1": 0.9279956695363576,
+    "seconds": 241.96,
+    "seed": 20261027
+  },
+  {
+    "experiment": "task4_20261027_quick1",
+    "task": "multiclass",
+    "algorithm": "rf",
+    "train_rows": 1799,
+    "test_rows": 766,
+    "features": 76,
+    "accuracy": 0.9086161879895561,
+    "weighted_precision": 0.9035615690792224,
+    "weighted_recall": 0.9086161879895562,
+    "weighted_f1": 0.9017196362250234,
+    "macro_f1": 0.9017196362250234,
+    "seconds": 277.64,
+    "seed": 20261027,
+    "importance_top10": [
+      [
+        "fwd_packet_length_max",
+        0.08297427165565406
+      ],
+      [
+        "init_win_bytes_forward",
+        0.0674541768322789
+      ],
+      [
+        "flow_iat_max",
+        0.06653275191524018
+      ],
+      [
+        "bwd_packets_s",
+        0.062267004448376
+      ],
+      [
+        "min_seg_size_forward",
+        0.05886606698315981
+      ],
+      [
+        "flow_iat_mean",
+        0.050963934742055794
+      ],
+      [
+        "fwd_iat_mean",
+        0.04873062484277248
+      ],
+      [
+        "bwd_packet_length_max",
+        0.04737238516390626
+      ],
+      [
+        "bwd_packet_length_min",
+        0.045011477214726835
+      ],
+      [
+        "ack_flag_count",
+        0.03605138719775356
+      ]
+    ]
+  }
+]
