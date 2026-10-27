@@ -1,0 +1,63 @@
+# Opt-in D: bind mounts. Do not apply this file until scripts/storage_migration.md
+# has been followed and all named-volume copies have passed checksum verification.
+services:
+  namenode:
+    volumes:
+      - type: bind
+        source: ${BDA_ROOT}/hdfs/nn
+        target: /hadoop/dfs/name
+  datanode1:
+    volumes:
+      - type: bind
+        source: ${BDA_ROOT}/hdfs/dn1
+        target: /hadoop/dfs/data
+  datanode2:
+    volumes:
+      - type: bind
+        source: ${BDA_ROOT}/hdfs/dn2
+        target: /hadoop/dfs/data
+  spark-master:
+    volumes:
+      - type: bind
+        source: ${BDA_ROOT}/spark-tmp
+        target: /spark-tmp
+  spark-worker-1:
+    volumes:
+      - type: bind
+        source: ${BDA_ROOT}/spark-tmp
+        target: /spark-tmp
+  spark-worker-2:
+    volumes:
+      - type: bind
+        source: ${BDA_ROOT}/spark-tmp
+        target: /spark-tmp
+  mongodb:
+    volumes:
+      - type: bind
+        source: ${BDA_ROOT}/mongo/data
+        target: /data/db
+      - type: bind
+        source: ${BDA_ROOT}/mongo/configdb
+        target: /data/configdb
+  app:
+    environment:
+      HF_HOME: /bda/staging/.hf
+      HF_HUB_CACHE: /bda/staging/.hf/hub
+      PYTHONPATH: /opt/spark/python/lib/pyspark.zip:/opt/spark/python/lib/py4j-0.10.9.7-src.zip
+      SPARK_LOCAL_DIRS: /spark-tmp
+      TMPDIR: /bda/staging/tmp
+      TEMP: /bda/staging/tmp
+      TMP: /bda/staging/tmp
+    volumes:
+      - type: bind
+        source: ${BDA_ROOT}/spark-tmp
+        target: /spark-tmp
+      - type: bind
+        source: ${BDA_ROOT}/staging
+        target: /bda/staging
+      - type: bind
+        source: ${BDA_ROOT}/models
+        target: /models
+      - type: bind
+        source: ${BDA_ROOT}/logs
+        target: /logs
