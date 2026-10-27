@@ -75,11 +75,13 @@ bda-ids/
 
 | Resource | Limit |
 |---|---|
-| Host free disk (C:) | ~10 GB — keep staging data deleted after ingest |
-| Docker VHDX (D:) | 45 GB available |
-| Raw dataset working set | ≤ 600 MB total across all three datasets |
-| WSL2 memory cap | 8 GB (set in `.wslconfig`) |
-| Spark worker memory | 1.5 GB × 2 (configurable via `.env`) |
+| Project storage root | `D:\bda` (`BDA_ROOT=D:/bda`) |
+| D: free-space floor | 12 GB before heavy operations; run `scripts\disk_guard.ps1` |
+| Physical dataset footprint | ≤ 70 GB on D: including replicas, MongoDB, and staging |
+| Task 1 source target | 30 GB genuine CIC packet source files for the approved deadline plan; CIC flow stays separate; UNSW-NB15 is validation |
+| Staging | One file at a time; ≤ 4 GB |
+| WSL2 limits | 8 GB memory, 6 processors; swap file `D:\wsl\swap.vhdx` |
+| Spark workers | 700 MiB and 1 core each; Spark 3.5.3 |
 
 ## Operational Rules
 
@@ -88,6 +90,9 @@ bda-ids/
 - **After each phase**, write an evidence file to `docs/evidence/phaseN.md` containing exact
   commands run and real (copy-pasted) outputs. Never fabricate results.
 - **If something fails, say so.** Record the error and the fix in the evidence file.
-- **Never download full datasets.** Respect the 600 MB working-set cap; trim immediately.
+- **Manifest first.** List source files and sizes before downloading; require explicit user approval of the proposed manifest before any dataset payload download.
+- Keep every file containing required rare CIC classes and cover each attack day where the caps allow. Record any class coverage gap; do not pad or synthesize rows.
+- Keep raw HDFS replication at 1 and clean/features/models at 2. Preserve all existing HDFS paths and Docker volumes; never format HDFS, delete `/bda`, prune volumes, or run `docker compose down -v`.
+- Keep Docker/WSL data, caches, Spark local storage, and staging on D:. Do not write files larger than 200 MB to C:.
 - **Preserve named volumes** (`mongo_data`, `namenode_data`, `datanode*_data`). The cleanup
   script (`scripts/cleanup.ps1`) deliberately does NOT run `docker system prune --volumes`.
