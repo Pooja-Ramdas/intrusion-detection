@@ -6,17 +6,24 @@ $env:PATH = [System.Environment]::GetEnvironmentVariable("PATH","Machine") + ";"
             [System.Environment]::GetEnvironmentVariable("PATH","User")
 
 Set-Location $PSScriptRoot\..
+$composeFiles = @("-f", "docker-compose.yml", "-f", "docker-compose.storage-d.yml")
+& powershell.exe -NoProfile -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'disk_guard.ps1')
+if ($LASTEXITCODE -ne 0) { throw 'Disk guard failed; cluster startup aborted.' }
 
 if ($Build) {
     Write-Host "Building bda-spark image..." -ForegroundColor Cyan
-    docker compose build --no-cache
+    docker compose @composeFiles build --no-cache
+    if ($LASTEXITCODE -ne 0) { throw 'Spark image build failed.' }
+    & powershell.exe -NoProfile -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'disk_guard.ps1')
+    if ($LASTEXITCODE -ne 0) { throw 'Disk guard failed after build; cluster startup aborted.' }
 }
 
 Write-Host "Starting cluster..." -ForegroundColor Cyan
-docker compose up -d
+docker compose @composeFiles up -d
+if ($LASTEXITCODE -ne 0) { throw 'Compose startup failed.' }
 
 Write-Host "Waiting for services to become healthy..." -ForegroundColor Yellow
-$services = @("namenode","datanode1","datanode2","spark-master","mongodb")
+$services = @("namenode","datanode1","datanode2","spark-master","spark-worker-1","spark-worker-2","mongodb","app")
 foreach ($svc in $services) {
     $attempts = 0
     while ($attempts -lt 20) {
