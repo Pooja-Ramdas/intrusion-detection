@@ -1,0 +1,6 @@
+query,elapsed_ms,returned,docs_examined,collection_documents,status
+label_attack,1.372,0,0,0,measured_empty_collection
+ip_lookup,0.742,0,0,0,measured_empty_collection
+time_range,0.669,0,0,0,measured_empty_collection
+payload_entropy,0.706,0,0,0,measured_empty_collection
+label_time,0.632,0,0,0,measured_empty_collection
