@@ -1,21 +1,19 @@
 import json
 import os
-import re
 from pathlib import Path
 
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
-from pymongo import MongoClient
 
 st.set_page_config(page_title="BDA | Network Defense", page_icon="🛡️", layout="wide")
 st.markdown("<style>.block-container{padding-top:1.4rem}.stMetric{background:#101c2c;padding:14px;border-radius:10px}</style>", unsafe_allow_html=True)
 st.title("🛡️ Network Traffic Intelligence")
 st.caption("Distributed intrusion detection · CIC-IDS2017 · UNSW-NB15")
-pages=["Overview","Data Profiling","Detection Results","Traffic Analysis","Investigation","Scalability"]
+pages=["Overview","Data Profiling","Detection Results","Traffic Analysis"]
 page=st.sidebar.radio("Workspace",pages)
-st.sidebar.caption("HDFS · Spark 3.5 · MongoDB · Streamlit")
+st.sidebar.caption("HDFS · Spark 3.5 · Streamlit")
 
 profile=Path(os.getenv("BDA_PROFILE_DIR","/profile"))
 def artifact_dir():
@@ -60,7 +58,7 @@ def curve_figure(curves,title,x_title,y_title,baseline=False):
 
 if page=="Overview":
     st.subheader("Distributed analytics architecture")
-    st.code("Source files → HDFS raw → Spark profiling/features → MLlib → MongoDB investigation → Streamlit",language="text")
+    st.code("Source files → HDFS raw → Spark profiling/features → MLlib → Streamlit",language="text")
     a,b,c=st.columns(3)
     a.metric("HDFS raw","22.71 GB logical","replication 1 · report snapshot")
     b.metric("HDFS /bda","24.43 GB physical","last measured snapshot")
@@ -80,7 +78,7 @@ elif page=="Detection Results":
     st.subheader("Held-out model evaluation")
     result=evaluation()
     if not result:
-        st.error(f"Evaluation artifact is missing: {artifacts/'evaluation'/'evaluation_metrics.json'}")
+        st.info("Evaluation results are not available yet.")
     else:
         st.caption(result.get("note","Metrics are calculated from saved held-out predictions."))
         models=result.get("models",{})
@@ -89,7 +87,7 @@ elif page=="Detection Results":
             summary=pd.read_csv(summary_path)
             st.dataframe(summary,use_container_width=True,hide_index=True)
         except (OSError,ValueError):
-            st.warning("Model summary CSV is unavailable; detailed metrics are still shown below.")
+            pass
         if models:
             key=st.selectbox("Model",list(models),format_func=lambda k:f"{models[k]['task']} · {models[k]['algorithm']}")
             item=models[key]
@@ -108,8 +106,8 @@ elif page=="Detection Results":
                 st.subheader("Per-class metrics")
                 st.dataframe(details[details["model_key"]==key],use_container_width=True,hide_index=True)
             except (OSError,ValueError):
-                st.info("Per-class metrics CSV is not available.")
-        st.warning("Results are from a reduced seeded sample, not full-dataset evaluation. Multiclass AUC is one-vs-rest; see docs/phase_4_report.md for limits.")
+                pass
+        st.caption("Evaluation uses a reduced seeded sample. Multiclass AUC is one-vs-rest; see docs/phase_4_report.md for scope details.")
 elif page=="Traffic Analysis":
     st.subheader("Protocol and packet profile")
     d=table("protocol_distribution")
@@ -117,35 +115,3 @@ elif page=="Traffic Analysis":
     d=table("packet_size_distribution")
     chart(d,"packet_size_bin","rows","Packet size distribution")
     st.info("Payload entropy and top-talker tables are not available in verified Task 3 outputs.")
-elif page=="Investigation":
-    st.subheader("Flow lookup")
-    uri=os.getenv("MONGO_URI","").strip()
-    if not uri:
-        try: uri=str(st.secrets.get("MONGO_URI","")).strip()
-        except Exception: uri=""
-    if not uri:
-        st.error("MongoDB is not configured for this hosted dashboard. Streamlit Community Cloud cannot resolve the local Docker hostname 'mongodb'. Configure MONGO_URI in this app's Secrets with an internet-reachable MongoDB URI.")
-        st.caption("For a live connection, the remote database must also contain documents in the bda.flows collection. Do not commit the URI or credentials to GitHub.")
-    else:
-        label=st.text_input("Label contains","BENIGN")
-        ip=st.text_input("IP address (optional)")
-        if st.button("Search MongoDB"):
-            try:
-                client=MongoClient(uri,serverSelectionTimeoutMS=3000,connectTimeoutMS=3000,socketTimeoutMS=5000)
-                client.admin.command("ping")
-                col=client[os.getenv("MONGO_DB","bda")][os.getenv("MONGO_COLLECTION","flows")]
-                filt={"label":{"$regex":re.escape(label),"$options":"i"}} if label else {}
-                if ip: filt["$or"]=[{"src_ip":ip},{"dst_ip":ip},{"metadata.src_ip":ip},{"metadata.dst_ip":ip}]
-                rows=list(col.find(filt,limit=100).sort("_id",-1))
-                st.write("Returned",len(rows),"documents")
-                if rows: st.json(rows[:20])
-                else: st.info("MongoDB connection succeeded, but this query returned no documents.")
-            except Exception as e:
-                st.error("MongoDB query failed. Check the configured URI, network access list, and database credentials.")
-                st.code(str(e))
-        st.caption("Queries are limited to 100 returned documents.")
-elif page=="Scalability":
-    st.subheader("Spark and MongoDB benchmarks")
-    st.info("No verified Task 3 scaling CSV or MongoDB query benchmark exists.")
-    d=table("profile_summary")
-    st.dataframe(d,use_container_width=True)
