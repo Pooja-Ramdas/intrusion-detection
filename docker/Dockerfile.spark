@@ -28,5 +28,6 @@ COPY app/ /app/
 # HF cache inside container (overridden to host-mounted volume at runtime for ingest jobs)
 ENV HF_HOME=/tmp/hf_cache
 ENV PYTHONUNBUFFERED=1
+ENV PYTHONPATH=/opt/spark/python/lib/pyspark.zip:/opt/spark/python/lib/py4j-0.10.9.7-src.zip
 
 USER spark
